@@ -8,12 +8,12 @@ NC='\033[0m'
 cd ascii
 for I in $(ls)
 do
-	echo $I
 	SIZE=$(wc -c < $I)
 	BEG=$(head -c $FH $I)
 	LEFT=$(($SIZE-$TOT))
 	S_LEFT=$(tail -c $LEFT $I)
-	echo -n "$BEG " > $I
+	echo > $I
+	echo -n "$BEG " >> $I
 	echo -en  "$RED$BRAND$NC " >> $I
 	echo "$S_LEFT" >> $I
 done
