@@ -1,6 +1,9 @@
 #!/bin/bash
 
 SLEEP=0.05
+if [ $# -eq 1 ]; then
+SLEEP=$1
+fi
 
 while :
 do
